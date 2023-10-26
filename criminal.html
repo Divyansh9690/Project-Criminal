@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Criminal Details App</title>
+    <style>
+        /* CSS for styling the app */
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <div id="login-screen">
+        <h2>Login</h2>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Username" required><br>
+            <input type="password" id="password" placeholder="Password" required><br>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    
+    <div id="dashboard" style="display: none;">
+        <h2>Dashboard</h2>
+        <ul>
+            <li><a href="#" id="search-link">Search Criminals</a></li>
+            <li><a href="#" id="add-criminal-link">Add New Criminal</a></li>
+            <li><a href="#" id="reports-link">Reports</a></li>
+            <li><a href="#" id="notifications-link">Notifications</a></li>
+            <li><a href="#" id="settings-link">Settings</a></li>
+        </ul>
+    </div>
+    
+    <div id="search-criminals" style="display: none;">
+        <h2>Search Criminals</h2>
+        <input type="text" id="search-criteria" placeholder="Enter search criteria"><br>
+        <button id="search-button">Search</button>
+        <div id="search-results">
+            <!-- Search results will be displayed here -->
+        </div>
+    </div>
+    
+    <!-- Additional sections for criminal details, add new criminal, reports, notifications, and settings can be added similarly -->
+    
+    <script>
+        // JavaScript for handling user interactions
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // Implement authentication logic here
+            // If authentication is successful, hide the login screen and show the dashboard
+            // Otherwise, display an error message
+        });
+
+        document.getElementById('search-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            hideAllSections();
+            document.getElementById('search-criminals').style.display = 'block';
+        });
+
+        document.getElementById('search-button').addEventListener('click', function() {
+            // Implement search logic here and display results in the search-results div
+        });
+
+        // Implement similar click event listeners for other dashboard links
+
+        function hideAllSections() {
+            document.getElementById('dashboard').style.display = 'none';
+            document.getElementById('search-criminals').style.display = 'none';
+            // Hide other sections as needed
+        }
+    </script>
+</body>
+</html>
